@@ -11,7 +11,7 @@ And get to know me in unique style.
 ### SCREENSHOT
 
 The final output might look something like this:
-
+<img src="./demo.png"></img>
 
 <hr/>
 
