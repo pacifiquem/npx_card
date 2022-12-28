@@ -30,14 +30,14 @@ const questions = [
                 }
             },
             {
-                name: `Send me an ${chalk.green.bold("email")}?`,
+                name: `Send me an ${chalk.green.bold("email")} ?`,
                 value: () => {
                     open("mailto:pacifiquemurangwa001@gmail.com");
                     console.log("\nDone, see you soon at inbox .\n");
                 }
             },
             {
-                name: `Download my ${chalk.magentaBright.bold("Resume")} ?`,
+                name: `Download my ${chalk.yellowBright.bold("Resume")} ?`,
                 value: () => {
                     // cliSpinners.dots;
                     const loader = ora({
@@ -54,7 +54,7 @@ const questions = [
                 }
             },
             {
-                name: `Schedule a ${chalk.redBright.bold("Meeting")} ?`,
+                name: `Schedule a ${chalk.red.bold("Meeting")} ?`,
                 value: () => {
                     open('https://calendly.com/pacifiquem/30min');
                     console.log("\n See you at the meeting . \n");
@@ -115,7 +115,7 @@ const me = boxen(
         )}`
     ].join("\n"),
     {
-        margin: 1,
+        margin: '1 auto',
         float: 'center',
         padding: 1,
         borderStyle: "single",
