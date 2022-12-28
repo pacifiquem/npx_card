@@ -1,6 +1,6 @@
 {
   "name": "pacifiquem",
-  "version": "4.0.3",
+  "version": "5.0.0",
   "description": "A personal card for Pacifiquem (@pacifiquem)",
   "main": "card.js",
   "bin": {
