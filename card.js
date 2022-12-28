@@ -20,17 +20,24 @@ const questions = [
     {
         type: "list",
         name: "action",
-        message: "What you want to do?",
+        message: "What you want to do ?\n",
         choices: [
             {
-                name: `Send me an ${chalk.green.bold("email")}?`,
+                name: `Visit my ${chalk.magenta.bold("Portfolio")} ?`,
                 value: () => {
-                    open("mailto:hi@rutagengwa-asante-bruce.vercel.app");
-                    console.log("\nDone, see you soon at inbox.\n");
+                    open("pacifiquem.engineer");
+                    console.log("\nDone, have a nice view .\n");
                 }
             },
             {
-                name: `Download my ${chalk.magentaBright.bold("Resume")}?`,
+                name: `Send me an ${chalk.green.bold("email")}?`,
+                value: () => {
+                    open("mailto:pacifiquemurangwa001@gmail.com");
+                    console.log("\nDone, see you soon at inbox .\n");
+                }
+            },
+            {
+                name: `Download my ${chalk.magentaBright.bold("Resume")} ?`,
                 value: () => {
                     // cliSpinners.dots;
                     const loader = ora({
@@ -39,22 +46,22 @@ const questions = [
                     }).start();
                     let pipe = request('https://drive.google.com/file/d/1wFEAabbCbo4oE81VO0fCDfWAHxLACQTT/view?usp=sharing').pipe(fs.createWriteStream('./rutagengwabruce-resume.html'));
                     pipe.on("finish", function () {
-                        let downloadPath = path.join(process.cwd(), 'rutagengwabruce-resume.html')
+                        let downloadPath = path.join(process.cwd(), 'pacifiquem.html')
                         console.log(`\nResume Downloaded at ${downloadPath} \n`);
-                        open(downloadPath)
+                        open(downloadPath);
                         loader.stop();
                     });
                 }
             },
             {
-                name: `Schedule a ${chalk.redBright.bold("Meeting")}?`,
+                name: `Schedule a ${chalk.redBright.bold("Meeting")} ?`,
                 value: () => {
-                    open('https://calendly.com/rutagengwabruce/30min');
-                    console.log("\n See you at the meeting \n");
+                    open('https://calendly.com/pacifiquem/30min');
+                    console.log("\n See you at the meeting . \n");
                 }
             },
             {
-                name: "Just quit.",
+                name: "Just quit. ",
                 value: () => {
                     console.log("Hasta la vista.\n");
                 }
@@ -64,16 +71,16 @@ const questions = [
 ];
 
 const data = {
-    name: chalk.bold.green("             RUTAGENGWA asante Bruce"),
-    handle: chalk.white("@RUTAGENGWA-ASANTE-BRUCE"),
-    work: `${chalk.white("Full stack")} ${chalk
+    name: chalk.bold.green("Murangwa Pacifique"),
+    handle: chalk.white("@pacifiquem"),
+    work: `${chalk.white("Full stack Developer")} ${chalk
         .hex("#2b82b2")
-        .bold("Software Engineer")}`,
-    twitter: chalk.gray("https://twitter.com/") + chalk.cyan("rutagengwabruce"),
-    github: chalk.gray("https://github.com/") + chalk.green("RUTAGENGWA-ASANTE-BRUCE"),
-    linkedin: chalk.gray("https://linkedin.com/in/") + chalk.blue("bruce-asante-2b072822b"),
-    web: chalk.cyan("https://rutagengwa-asante-bruce.vercel.app/"),
-    npx: chalk.red("npx") + " " + chalk.white("rutagengwabruce"),
+        .bold("(FE heavy .)")}`,
+    twitter: chalk.gray("https://twitter.com/") + chalk.cyan("PacifMuran1"),
+    github: chalk.gray("https://github.com/") + chalk.green("pacifiquem"),
+    linkedin: chalk.gray("https://linkedin.com/in/") + chalk.blue("pacifique-murangwa-10394722b"),
+    web: chalk.cyan("https://pacifiquem.engineer/"),
+    npx: chalk.red("npx") + " " + chalk.white("pacifiquem"),
 
     labelWork: chalk.white.bold("       Work:"),
     labelTwitter: chalk.white.bold("    Twitter:"),
@@ -104,7 +111,7 @@ const me = boxen(
             "question or just want to say hi, I will try "
         )}`,
         `${chalk.italic(
-            "my best to get back to you!"
+            "my best to get back to you !"
         )}`
     ].join("\n"),
     {
@@ -125,4 +132,7 @@ const tip = [
 ].join("\n");
 console.log(tip);
 
-prompt(questions).then(answer => answer.action());
+prompt(questions).then(answer => answer.action()).catch(err => {
+    console.log(chalk.bgCyan.magenta.bold("Something went wrong . Try again later . \n \n"));
+    console.log(err);
+});

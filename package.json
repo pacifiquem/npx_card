@@ -1,14 +1,14 @@
 {
-  "name": "rutagengwabruce",
+  "name": "pacifiquem",
   "version": "4.0.3",
-  "description": "A personal card for RUTAGENGWA Asante Bruce(@RUTAGENGWA-ASANTE-BRUCE)",
+  "description": "A personal card for Pacifiquem (@pacifiquem)",
   "main": "card.js",
   "bin": {
-    "rutagengwabruce": "./card.js"
+    "pacifiquem": "./card.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RUTAGENGWA-ASANTE-BRUCE/npx_card.git"
+    "url": "git+https://github.com/pacifiquem/npx_card.git"
   },
   "scripts": {
     "test": "node card.js",
@@ -30,8 +30,10 @@
     "npm card",
     "npx",
     "npx card",
-    "business card"
+    "business card",
+    "pacifiquem"
   ],
-  "author": "RUTAGENGWA Asante Bruce <https://rutagengwa-asante-bruce.vercel.app/> (https://rutagengwa-asante-bruce.vercel.app/)",
-  "license": "ISC"
+  "originalAuthor": "RUTAGENGWA Asante Bruce <https://rutagengwa-asante-bruce.vercel.app/> (https://rutagengwa-asante-bruce.vercel.app/)",
+  "author": "pacifiquem@github.com",
+  "license": "MIT"
 }
