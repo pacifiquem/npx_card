@@ -24,15 +24,15 @@ const questions = [
         choices: [
             {
                 name: `Visit my ${chalk.magenta.bold("Portfolio")} ?`,
-                value: () => {
-                    open("pacifiquem.engineer");
+                value: async () => {
+                    await open("https://pacifiquem.engineer");
                     console.log("\nDone, have a nice view .\n");
                 }
             },
             {
                 name: `Send me an ${chalk.green.bold("email")} ?`,
-                value: () => {
-                    open("mailto:pacifiquemurangwa001@gmail.com");
+                value: async () => {
+                    await open("mailto:pacifiquemurangwa001@gmail.com");
                     console.log("\nDone, see you soon at inbox .\n");
                 }
             },
@@ -44,9 +44,9 @@ const questions = [
                         text: ' Downloading Resume',
                         spinner: cliSpinners.material,
                     }).start();
-                    let pipe = request('https://drive.google.com/file/d/1wFEAabbCbo4oE81VO0fCDfWAHxLACQTT/view?usp=sharing').pipe(fs.createWriteStream('./rutagengwabruce-resume.html'));
+                    let pipe = request('https://drive.google.com/u/0/uc?id=1YzkaDfJZ2Fe2eHEhpoysbBjrdvm1nhRD&export=download').pipe(fs.createWriteStream('./pacifiquem.pdf'));
                     pipe.on("finish", function () {
-                        let downloadPath = path.join(process.cwd(), 'pacifiquem.html')
+                        let downloadPath = path.join(process.cwd(), 'pacifiquem.pdf')
                         console.log(`\nResume Downloaded at ${downloadPath} \n`);
                         open(downloadPath);
                         loader.stop();
@@ -55,8 +55,8 @@ const questions = [
             },
             {
                 name: `Schedule a ${chalk.red.bold("Meeting")} ?`,
-                value: () => {
-                    open('https://calendly.com/pacifiquem/30min');
+                value: async () => {
+                    await open('https://calendly.com/pacifiquemurangwa001');
                     console.log("\n See you at the meeting . \n");
                 }
             },
@@ -73,12 +73,12 @@ const questions = [
 const data = {
     name: chalk.bold.green("Murangwa Pacifique"),
     handle: chalk.white("@pacifiquem"),
-    work: `${chalk.white("Full stack Developer")} ${chalk
+    work: `${chalk.white("Backend Engineer")} ${chalk
         .hex("#2b82b2")
-        .bold("(FE heavy .)")}`,
-    twitter: chalk.gray("https://twitter.com/") + chalk.cyan("PacifMuran1"),
+        .bold("Golang || C/C++ || NodeJS || NestJS || SpringBoot")}`,
+    twitter: chalk.gray("https://twitter.com/") + chalk.cyan("_pacifiquem"),
     github: chalk.gray("https://github.com/") + chalk.green("pacifiquem"),
-    linkedin: chalk.gray("https://linkedin.com/in/") + chalk.blue("pacifique-murangwa-10394722b"),
+    linkedin: chalk.gray("https://linkedin.com/in/") + chalk.blue("pacifiquem"),
     web: chalk.cyan("https://pacifiquem.engineer/"),
     npx: chalk.red("npx") + " " + chalk.white("pacifiquem"),
 
